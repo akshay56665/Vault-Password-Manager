@@ -1,0 +1,33 @@
+*{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.mainbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    border: 1px solid rgba(131, 127, 127, 0.418);
+    width: 28%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.form{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+
+}
+
+.input{
+    margin: 10px 0;
+}
+
+.btn{
+    margin: 10px;
+}

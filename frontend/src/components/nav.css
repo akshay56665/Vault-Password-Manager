@@ -1,0 +1,17 @@
+nav {
+    background-color: rgba(173, 197, 197, 0.418);
+    /* opacity: ; */
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 1rem;
+  }
+  
+  nav a {
+    margin: 0 27px;
+    color: rgb(95, 87, 87);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: rgba(16, 52, 129, 0.747)
+  }
