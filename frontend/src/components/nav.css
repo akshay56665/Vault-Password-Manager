@@ -8,10 +8,10 @@ nav {
   
   nav a {
     margin: 0 27px;
-    color: rgb(95, 87, 87);
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
 
   nav a:hover {
-    color: rgba(16, 52, 129, 0.747)
+    color: rgba(157, 221, 132, 0.747)
   }
