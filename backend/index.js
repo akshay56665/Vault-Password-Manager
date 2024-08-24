@@ -7,7 +7,7 @@ const dataroute=require('./routes/data')
 const bodyParser=require('body-parser');
 const cors=require('cors');
 const cookieParser=require('cookie-parser')
-mongoose.connect(process.env.MONGO_URL||"mongodb://127.0.0.1:27017/vault")
+mongoose.connect(process.env.MONGO_URL)
 
 app.use(cors()); 
 app.use(cookieParser());
@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/home',dataroute);
 app.use('/user',userroute); 
 
-const port=process.env.PORT||8000
-app.listen(port,()=>{
+app.listen(process.env.PORT,()=>{
     console.log('Server Started');
 })
