@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const {register,handleSubmit,watch,formState: { errors },} = useForm()
+  const {register,handleSubmit,formState: { errors },} = useForm()
   const [error,setError]=useState(null)
   const navigate=useNavigate()  
   const onSubmit = (data) => {

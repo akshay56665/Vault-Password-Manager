@@ -14,7 +14,6 @@ const Home = () => {
   useEffect(() => {
     axios.get('/home')
       .then((res) => {
-        console.log(res)
         if (res.data === 'login') {
           navigate('/login');
         }
