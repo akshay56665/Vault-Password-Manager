@@ -1,7 +1,11 @@
 {
   "name": "vault",
   "version": "0.1.0",
+<<<<<<< HEAD
   "proxy": "https://vault-backend-n015.onrender.com",
+=======
+  "proxy":"https://vault-backend-n015.onrender.com",
+>>>>>>> 6326f232d327f32348956768a82fb92959a2ed82
   "private": true,
   "dependencies": {
     "@react-navigation/native": "^6.1.17",
