@@ -3,6 +3,7 @@ import './edit.css';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
+import {Url} from '../../Url';
 
 const EditPage = () => {
     const [isEdit, setIsEdit] = useState(false);
@@ -15,7 +16,7 @@ const EditPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('/home/edit',{checkId,service,id,password})
+        axios.post(`${Url}/home/edit`,{checkId,service,id,password})
         .then((res)=>{
             if(res.data==="submit"){
                 navigate('/');
@@ -28,7 +29,7 @@ const EditPage = () => {
     
     const handleCheck=(e)=>{
         e.preventDefault();
-        axios.post('/home/check',{checkId})
+        axios.post(`${Url}/home/check`,{checkId})
         .then((res)=>{
             if(res.data==='edit'){
                 setIsEdit(true);

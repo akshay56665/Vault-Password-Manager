@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 import './home.css'
+import {Url} from '../../Url';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Home = () => {
   const [data, setData] = useState([])
   
   useEffect(() => {
-    axios.get('/home')
+    axios.get(`${Url}/home`)
       .then((res) => {
         if (res.data === 'login') {
           navigate('/login');
@@ -20,9 +21,9 @@ const Home = () => {
         setName(res.data.name);
         setData(res.data.data);
       })
-  }, []);
+  }, [navigate]);
   const handleDelete = (ID) => {
-    axios.post('/home/delete', { id: ID })
+    axios.post(`${Url}/home/delete`, { id: ID })
       .then((res) => {
         setData(data.filter((ele) => {
           return ele[1] !== res.data.arr[1];

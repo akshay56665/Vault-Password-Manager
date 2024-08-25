@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert';
 import {useNavigate} from 'react-router-dom'
+import {Url} from "../Url";
 
 const Login = () => {
   const {register,handleSubmit,formState: { errors },} = useForm()
@@ -12,7 +13,7 @@ const Login = () => {
   const navigate=useNavigate();
 
   const onSubmit = (data) => {
-    axios.post("/user/login",{
+    axios.post(`${Url}/user/login`,{
       email:data.email,
       password:data.password
     })
