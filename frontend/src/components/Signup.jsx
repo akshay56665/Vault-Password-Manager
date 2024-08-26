@@ -5,15 +5,15 @@ import './Signup.css'
 import { useForm } from "react-hook-form"
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import {Url} from '../Url';
+import { useNavigate,Link } from 'react-router-dom';
+import {baseUrl} from '../Url';
 
 const Signup = () => {
   const {register,handleSubmit,formState: { errors },} = useForm()
   const [error,setError]=useState(null)
   const navigate=useNavigate()  
   const onSubmit = (data) => {
-    axios.post(`${Url}/user/signup`,{
+    axios.post(`${baseUrl}/user/signup`,{
       fullname:data.fullname,
       email:data.email,
       password:data.password
@@ -51,7 +51,7 @@ const Signup = () => {
           <Button variant="primary" type="submit" className='btn'>
             Submit
           </Button>
-          <h4 style={{color:"azure"}}><i>Already have an account</i> {<a href="/login">Login</a>}</h4> 
+          <h4 style={{color:"azure"}}><i>Already have an account</i> {<Link to="/login">Login</Link>}</h4> 
         </Form>
       </div>
     </div>
