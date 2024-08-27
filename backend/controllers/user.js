@@ -23,7 +23,8 @@ const handleLogin = async (req, res) => {
     return res.cookie("token", token, {
       httpOnly: true,
       secure:true,
-      sameSite:'none'
+      sameSite:'lax',
+      domain:'vault-backend-z5r7.onrender.com'
     }).status(200).send("Login");
   }catch (error) {
     return res.status(401).send("Invalid Email or password");
