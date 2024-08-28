@@ -24,7 +24,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true,
       secure:true,
       sameSite:'lax',
-      domain:'.vercel.com'
+      domain:'.onrender.com'
     }).status(200).send("Login");
   }catch (error) {
     return res.status(401).send("Invalid Email or password");
