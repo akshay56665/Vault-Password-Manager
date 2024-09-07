@@ -8,7 +8,6 @@ const bodyParser=require('body-parser');
 const cors=require('cors');
 const cookieParser=require('cookie-parser')
 
-// mongoose.connect("mongodb://127.0.0.1:27017/vault")
 mongoose.connect(process.env.MONGO_URL)
 app.use(cors()); 
 app.use(cookieParser());

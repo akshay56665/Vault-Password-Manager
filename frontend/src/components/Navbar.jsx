@@ -3,13 +3,12 @@ import { NavLink } from 'react-router-dom';
 import './nav.css'
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
-import {baseUrl} from '../Url';
 
 const Navbar = ({name}) => {
   const [err,setErr]=useState(null)
 
   const userLogout=()=>{
-    axios.get(`${baseUrl}/user/logout`)
+    axios.get(`/user/logout`)
     .then(res=>{
       window.location.reload()
     })

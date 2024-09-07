@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import {baseUrl} from '../../Url';
 
 const AddID = () => {
   const [service, setService] = useState('');
@@ -15,7 +14,7 @@ const AddID = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post(`${baseUrl}/home/add`,{service,id,password})
+    axios.post(`/home/add`,{service,id,password})
     .then((res)=>{
       if(res.data==="created"){
         navigate('/');

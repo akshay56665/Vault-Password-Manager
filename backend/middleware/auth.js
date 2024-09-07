@@ -1,7 +1,6 @@
 const { verifyToken } = require("./tokens");
 
 function Verify(req,res,next){
-    console.log(req.cookies)
     const token=req.cookies.token;
     if(!token){
         return res.status(200).send("login");
