@@ -8,7 +8,7 @@ const handleCreation = async (req, res) => {
   const { service, id, password } = req.body;
   if (!service || !id || !password) {
     return res.status(402).send("fill complete form");
-  }
+  } 
   try {
     await UserData.create({
       service,
@@ -22,27 +22,24 @@ const handleCreation = async (req, res) => {
   }
 }; 
 
-const handleCheck = async (req, res) => {
-  const { checkId } = req.body;
-  const data = await UserData.findOne({ id: checkId });
-  if (!data) {
-    return res.status(402).send("Invalid input");
-  }
-  return res.status(200).send("edit");
+const handleGiveData = async (req, res) => {
+  const { userId } = req.body;
+  const data = await UserData.findOne({ id: userId });
+  return res.json(data);
 };
 
 const handleEdit = async (req, res) => {
-  const { checkId, service, id, password } = req.body;
+  const { userId, service, id, password } = req.body;
   
   if (!service || !id || !password) {
     return res.status(402).send("All fields are mandatory");
   }
   try {
     const data = await UserData.findOneAndUpdate(
-      { id: checkId },
+      { id: userId },
       { service: service, id: id, password: password }
     )
-    return res.status(200).send("submit");
+    return res.status(200).send("edited");
   } catch (error) {
     return res.status(401).send("Unknown error");
   }
@@ -63,5 +60,5 @@ module.exports = {
   handleCreation,
   handleDelete,
   handleEdit,
-  handleCheck,
+  handleGiveData,
 };

@@ -23,7 +23,7 @@ const handleLogin = async (req, res) => {
     return res.cookie("token", token, {
       httpOnly: true,
       secure:process.env.NODE_ENV==='production' ? true:false,
-    }).status(200).send("Login");
+    }).status(200).send("logged");
   }catch (error) {
     return res.status(401).send("Invalid Email or password");
   }
