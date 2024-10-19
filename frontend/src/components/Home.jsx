@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Header from "./Header"
 import HeroSection from "./HeroSection"
-import Footer from "./footer"
+import Footer from "./Footer"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
