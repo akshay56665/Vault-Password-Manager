@@ -11,7 +11,7 @@ const cookieParser=require('cookie-parser')
 // mongoose.connect("mongodb://127.0.0.1:27017/vault")
 mongoose.connect(process.env.MONGO_URL)
 app.use(cors({ 
-    origin: "http://localhost:5173", 
+    origin: process.env.FRONTEND_URI, 
     credentials: true 
 })); 
 
